@@ -21,10 +21,15 @@ let url ="http://localhost:3000/films"
 function loadMovies(moviesData){ 
     // i select a div in the dom to render the movies names
   let moviesSection= document.getElementById("moviesNames");
-  let moviesList=document.createElement("p");
-  moviesList.className="btn btn-secondary"
-  moviesList.innerText=moviesData.title;
+
+  let moviesList=document.createElement("ul");
+  let listItems=document.createElement("li")
+  listItems.className="btn btn-secondary"
+   listItems.innerText=moviesData.title;
+//   let breaker=document.createElement("<br>")
+   moviesList.appendChild(listItems)
   moviesSection.appendChild(moviesList);
+//   moviesSection.appendChild(breaker);
 //   i added an event lister to the name of the movies so that when a user clicks on it, 
 // it can render the movie's details
 
